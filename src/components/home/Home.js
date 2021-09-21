@@ -4,9 +4,10 @@ import './home.css';
   import {useHistory} from "react-router";
 import img5 from '../img/img5.jpg'
 import Footer from '../footer/Footer'
-import img3 from '../img/img3.jpeg'
+import img7 from '../img/img7.jpeg'
 import img2 from '../img/img2.jpg'
-import img4 from '../img/img4.jpg'
+import img1 from '../img/img1.jpg'
+import img3 from '../img/img3.jpeg'
 
 
 const Home = () => {
@@ -16,28 +17,24 @@ const history = useHistory();
          
             <Carousel>
            
-        <Carousel.Item>
-            <img className="a-block w-100" src={img4}   alt="img4"/>
-          <Carousel.Caption>
-            <h2>Try diffrent culture Food</h2>
-            <p>Potluck help us learn aboth other country food culture.</p>
-             <br/>
+        <Carousel.Item height= "300px" >
+                  <img className="d-block w-100"   src={img1}   alt="img4"/>
+          <Carousel.Caption className="d-md-block">
+            <h2>Show your skill</h2>
           </Carousel.Caption>
+
         </Carousel.Item>
 
             <Carousel.Item>
             <img  className="a-block w-100" src={img2}  alt="img2"/>
               <Carousel.Caption>
-            <h2>Create memory with <br/>the people you love and enjoy.</h2>
-            <p>Potluck is morethan just eating</p>
-            <br/>
+            <h2>Create memory.</h2>
           </Carousel.Caption>
             </Carousel.Item>
+
             <Carousel.Item>
-            <img className="a-block w-100" src={img3}   alt="img3"/>
+            <img className="a-block w-100" src={img7}   alt="img3"/>
               <Carousel.Caption>
-            <h3>Whu cook the whole thing and be stress</h3>
-            <p>One persone cooking for so many people is stressfull and not enjoyable.</p>
           <br/>
           </Carousel.Caption>
             </Carousel.Item>

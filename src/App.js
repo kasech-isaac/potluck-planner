@@ -1,4 +1,4 @@
-
+import React, { useState, useEffect } from 'react'
 import './App.css';
 import Home from './components/home/Home'
 import { Link, Switch, Route } from "react-router-dom";
@@ -20,22 +20,27 @@ import {useHistory} from "react-router-dom";
 
 
 function App() {
+    const [user, setUser] = useState({});
       const history = useHistory()
- const user= JSON.parse(localStorage.getItem('user-info'));
 
- function logOut(){
-localStorage.clear()
- history.push('./login')
- }
- 
+
+     useEffect(() => {
+    
+        setInterval(() => {
+            const userString = localStorage.getItem("user");
+            const user = JSON.parse(userString);
+            setUser(user);
+            }, [])
+    }, 5000);
   
+   const logout = () => {
+        return localStorage.removeItem("user");
+    }
+
+// 
   return (
 <div className="App">
-    {/* if(){
-
-    }else{
-
-    } */}
+    
 <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
   <Container>
 
