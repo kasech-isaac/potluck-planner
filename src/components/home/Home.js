@@ -1,6 +1,7 @@
 import React from 'react'
-import Carousel from 'react-bootstrap/Carousel';
+import {Carousel,Button} from 'react-bootstrap';
 import './home.css';
+  import {useHistory} from "react-router";
 import img5 from '../img/img5.jpg'
 import Footer from '../footer/Footer'
 import img3 from '../img/img3.jpeg'
@@ -9,6 +10,7 @@ import img4 from '../img/img4.jpg'
 
 
 const Home = () => {
+const history = useHistory();
     return (
        <>
          
@@ -46,9 +48,9 @@ const Home = () => {
 
         <div className="row featurette">
           <div className="col-md-7">
-            <h2 className="featurette-heading">potluck is awsome<span className="text-muted"> more info will be coming soon</span></h2>
-            <p className="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
-            <button className="lead">how is potluck saves time</button>
+            <h2 className="featurette-heading">Potlucks are about sharing.</h2>
+            <p className="lead">Potlucks are an important part of many communities, as a way of bringing people together and eating.</p>
+            <Button className="lead" onClick={() => history.push('/signup')}>Start Today</Button>
 
           </div>
           <div className="col-md-5">
@@ -66,8 +68,8 @@ const Home = () => {
 
           </div>
           <div className="col-md-7">
-            <h2 className="featurette-heading">Potluck will help you same Time<span className="text-muted"> why cook all by yourself</span></h2>
-            <button className="lead">how is potluck saves time</button>
+            <h2 className="featurette-heading">A potluck is a great way to learn about other people Culture.</h2>
+            <Button className="lead" onClick={() => history.push('/signup')}>Start Today</Button>
           </div>
           </div>
                 <hr className="featurette-divider"></hr>

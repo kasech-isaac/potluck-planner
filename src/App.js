@@ -1,3 +1,4 @@
+
 import './App.css';
 import Home from './components/home/Home'
 import { Link, Switch, Route } from "react-router-dom";
@@ -10,15 +11,31 @@ import Container from 'react-bootstrap/Container';
 import PrivateRoute from './components/auth/PrivateRoute';
 import CreateEvent from './components/containers/createEvent/CreateEvent' 
 import UpdateEvent from './components/containers/updateevent/UpdateEvent' 
+import EventCard from './components/containers/updateevent/EventCard' 
+import UpdateForm from './components/containers/updateevent/UpdateForm' 
+import {useParams} from "react-router-dom";
 import Dashbord from './components/containers/dashbord/Dashbord'
+import {useHistory} from "react-router-dom";
 
 
 
 function App() {
-  return (
+      const history = useHistory()
+ const user= JSON.parse(localStorage.getItem('user-info'));
 
-    <div className="App">
-    
+ function logOut(){
+localStorage.clear()
+ history.push('./login')
+ }
+ 
+  
+  return (
+<div className="App">
+    {/* if(){
+
+    }else{
+
+    } */}
 <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
   <Container>
 
@@ -31,15 +48,17 @@ function App() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+          
 
             <Link to="/" className="nav-link" aria-current="page">Home</Link>
             <Link to="/login" className="nav-link" aria-current="page">Login</Link>
-            <Link to="/signUp" className="nav-link" aria-current="page">SignupAuth</Link>
+            <Link to="/signUp" className="nav-link" aria-current="page">Signup</Link>
           </Nav>
         </Navbar.Collapse>
           </Container>
 
       </Navbar>
+
       <br></br>
             <Switch>
           <Route path="/login" component={LoginAuth}/>
@@ -53,6 +72,10 @@ function App() {
 <PrivateRoute path='/updateEvent'component={UpdateEvent}/>
       <PrivateRoute path='/dashboard'component={Dashbord}/>
        <PrivateRoute path='/newevent'component={CreateEvent}/>
+      <PrivateRoute path='/updateForm'component={EventCard}/>
+      <PrivateRoute path='/:id/editPotluck'component={UpdateForm}/>
+
+{/* editPotluck */}
       
 
 

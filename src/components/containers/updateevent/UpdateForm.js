@@ -1,45 +1,61 @@
 import React, { useState, useEffect } from 'react'
 import * as yup from "yup";
-import {Button} from 'react-bootstrap'
-import { Route,  useHistory} from "react-router-dom";
+import { Route, useHistory, useParams} from "react-router-dom";
 import { axiosWithAuth } from "../../../utils/axiosWithAuth";
- 
+
 const formSchema = yup.object().shape({
   potluckName: yup.string().required('required.'),
   date: yup.string().required('required.'),
-time: yup.string().required('required.'),
+  time: yup.string().required('required.'),
   location: yup.string().required('required.'),
   foodItems: yup.string().required('required.'),
 notes: yup.string().required('required.'),
 
 })
-const CreateEvent = () => {
+const UpdateForm = () => {
+      const {id}= useParams();
     const history = useHistory()
     const [postData, setPostData] = useState({potluckName: '', date: '', time: '', location: '',foodItems:'', notes:'' });
     const [buttonDisabled, setButtonDisabled] = useState(true)
 
   const [errors, setErrors] = useState({potluckName: '', date: '', time: '', location: '',foodItems:'', notes:'' })
 
-    useEffect(() => {
-    formSchema.isValid(postData).then((valid) => {
-      setButtonDisabled(!valid);
-    });
-  }, [postData]);
+   const effechfn=() =>{
+        axiosWithAuth().get(`https://potluck2020.herokuapp.com/${id}/editPotluck`)
+        .then(res=>{
 
+            setPostData(res.data[0])
+             console.log("result",res.data[0])
+           
+        })
+        .catch(err=> console.log("error",err))
+   }
+useEffect(effechfn, []);
 
   const formSubmit= (e) =>{
     e.preventDefault(); 
-            axiosWithAuth().post("https://potluck2020.herokuapp.com/addPotluck", postData)
+            axiosWithAuth().put(`https://potluck2020.herokuapp.com/${id}/editPotluck`, postData)
             .then(res => {
                 console.log("Result", res)
                 history.push("/updateEvent")
             })
             .catch(err => {
                 console.log("error", err)
-            })   
-    setPostData({  potluckName: '', date: '', time: '', location: '', fooditem:'', notes:'' });
-      
+            })         
 }
+
+
+// const deletePotluck=(id)=>{
+//    axiosWithAuth().delete(`https://potluck2020.herokuapp.com/${id}/deletePotluck`)
+//    .then(res=>{
+//      history.push('/newevent')
+//    })
+//    .catch(
+//      err => {
+//        console.log("err", err)
+//      }
+//    )
+// }
 const validateChange = e => {
     // Reach will allow us to "reach" into the schema and test only one part.
     yup
@@ -61,8 +77,8 @@ const validateChange = e => {
 
 
     return (
-       <form className="add-form" onSubmit={formSubmit}>
-      <h4>Create your potluck</h4>
+       <form className="add-form" >
+      <h4>Edit Your Event</h4>
       <div className="form-control">
         <div className="form-control">
           <label htmlFor="firstName">
@@ -144,15 +160,12 @@ const validateChange = e => {
             ) : null}
           </label> 
         </div>
-        {/* <div className="d-grid gap-2"> */}
-        <Button  variant="warning" size="lg">Create</Button>
-        {/* </div> */}
-        <div className="click" onClick={() => history.push('/upcomingevent')}>
-          Login
-        </div>
+
+        <button onClick={formSubmit}>Edit event</button>
+        
       </div>
     </form>
     )
 }
 
-export default CreateEvent
+export default UpdateForm
