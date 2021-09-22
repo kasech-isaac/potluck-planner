@@ -70,6 +70,7 @@ const validateChange = e => {
             <input
               type="text"
               name="potluckName"
+              data-cy="potluckName"
               value={postData.potluckName} 
               onChange={(e) => setPostData({ ...postData, potluckName: e.target.value})}
             />
@@ -84,6 +85,7 @@ const validateChange = e => {
             <input
               type="date"
               name="date"
+              data-cy="date"
               value={postData.date} 
               onChange={(e) => setPostData({ ...postData, date: e.target.value })}
             />
@@ -98,6 +100,7 @@ const validateChange = e => {
             <input
               type="time"
               name="time"
+              data-cy="time"
               value={postData.time} 
               onChange={(e) => setPostData({ ...postData, time: e.target.value })}
             />
@@ -111,6 +114,7 @@ const validateChange = e => {
             <input
               type="text"
               name="location"
+              data-cy="location"
               value={postData.location} 
               onChange={(e) => setPostData({ ...postData, location: e.target.value })}
             />
@@ -124,6 +128,7 @@ const validateChange = e => {
             <input
               type="text"
               name="foodItems"
+              data-cy="foodItems"
               value={postData.foodItems} 
               onChange={(e) => setPostData({ ...postData, foodItems: e.target.value })}
             />
@@ -136,6 +141,7 @@ const validateChange = e => {
             <input
               type="text"
               name="notes"
+              data-cy="notes"
               value={postData.notes} 
               onChange={(e) => setPostData({ ...postData, notes: e.target.value })}
             />
@@ -145,10 +151,10 @@ const validateChange = e => {
           </label> 
         </div>
         {/* <div className="d-grid gap-2"> */}
-        <Button  variant="warning" size="lg">Create</Button>
+        <Button  data-cy="submit" variant="warning" size="lg">Create</Button>
         {/* </div> */}
         <div className="click" onClick={() => history.push('/upcomingevent')}>
-          Login
+          upcoming event
         </div>
       </div>
     </form>

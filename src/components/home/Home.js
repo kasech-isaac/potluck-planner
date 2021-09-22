@@ -4,7 +4,7 @@ import './home.css';
   import {useHistory} from "react-router";
 import img5 from '../img/img5.jpg'
 import Footer from '../footer/Footer'
-import img7 from '../img/img7.jpeg'
+import img8 from '../img/img8.jpg'
 import img2 from '../img/img2.jpg'
 import img1 from '../img/img1.jpg'
 import img3 from '../img/img3.jpeg'
@@ -33,9 +33,8 @@ const history = useHistory();
             </Carousel.Item>
 
             <Carousel.Item>
-            <img className="a-block w-100" src={img7}   alt="img3"/>
+            <img className="a-block w-100" src={img8}   alt="img3"/>
               <Carousel.Caption>
-          <br/>
           </Carousel.Caption>
             </Carousel.Item>
             </Carousel>

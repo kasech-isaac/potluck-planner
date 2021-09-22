@@ -3,6 +3,7 @@ import * as yup from "yup";
 import { Route, useParams, useHistory} from "react-router-dom";
 import { axiosWithAuth } from "../../../utils/axiosWithAuth";
 import UpdateEvent from './UpdateEvent'
+import {Card,Button} from 'react-bootstrap'
 
 
 const EventCard = ({post}) => {
@@ -26,21 +27,22 @@ const deletePotluck=(id)=>{
 
     }
     return (
-       <>
-      <div className="film-list">
-      <h2>{post.potluckName}</h2>
-      <div className="bottom">
-      <p>Date: {post.date}</p>
-    <p>Time: {post.time}</p>
-      <p>Location: {post.location} </p>
-        <p>Food to bring: {post.foodItems}</p>
-        <p>Planner note: {post.notes} </p>
-        <button onClick={editClass.bind(this, post.potluckId)}>Edit</button> 
-        <strong> or </strong>
-        <button onClick={deletePotluck.bind(this, post.potluckId)}>del</button> 
-      </div>
-    </div>
-       </>
+    <Card className="text-center">
+  <Card.Header>Your Upcoming Event</Card.Header>
+  <Card.Body>
+    <Card.Title>{post.potluckName}</Card.Title>
+    <Card.Text>Date: {post.date}</Card.Text>
+<Card.Text>Time: {post.time}</Card.Text>
+<Card.Text>Location: {post.location} </Card.Text>
+<Card.Text>Food: {post.foodItems}</Card.Text>
+<Card.Text>Planner note: {post.notes}</Card.Text>
+    <Button variant="primary"onClick={editClass.bind(this, post.potluckId)}>Edit</Button>
+    <strong> or </strong>
+    <Button variant="primary"onClick={deletePotluck.bind(this, post.potluckId)}>Delete</Button>
+
+  </Card.Body>
+</Card>
+       
     )
 }
 

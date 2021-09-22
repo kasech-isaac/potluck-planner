@@ -107,6 +107,7 @@ const SignupAuth = () => {
             First Name
             <input
               type="text"
+              data-cy="firstName"
               name="firstName"
               value={formState.firstName}
               onChange={inputChange}
@@ -122,6 +123,7 @@ const SignupAuth = () => {
             <input
               type="text"
               name="lastName"
+              data-cy="lastName"
               value={formState.lastName}
               onChange={inputChange}
             />
@@ -136,6 +138,7 @@ const SignupAuth = () => {
             <input
               type="text"
               name="emailId"
+              data-cy="emailId"
               value={formState.emailId}
               onChange={inputChange}
             />
@@ -149,6 +152,7 @@ const SignupAuth = () => {
             <input
               type="password"
               name="password"
+              data-cy="password"
               value={formState.password}
               onChange={inputChange}
             />
@@ -159,14 +163,14 @@ const SignupAuth = () => {
 
           <label htmlFor="userType">
             Role
-            <select id="userType" name="userType" onChange={inputChange}>
-              <option value="user">user</option>
+            <select id="userType" name="userType" data-cy="userType" onChange={inputChange}>
+              <option value="#"></option>
               <option value="admin">admin</option>
             </select>
           </label>
         </div>
 
-        <button disabled={buttonDisabled}>Ragister</button>
+        <button data-cy="submit" disabled={buttonDisabled}>Ragister</button>
         <div className="click" onClick={() => history.push('/login')}>
           Login
         </div>

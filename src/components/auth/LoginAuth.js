@@ -93,6 +93,7 @@ const history = useHistory();
         Email
         <input
           type='text'
+          data-cy="emailId"
           name='emailId'
           value={formState.emailId}
           onChange={inputChange}
@@ -105,7 +106,9 @@ const history = useHistory();
   <label htmlFor='password'>
         Password
         <input
+        
           type='password'
+          data-cy="password"
           name='password'
           value={formState.password}
           onChange={inputChange}
@@ -115,7 +118,7 @@ const history = useHistory();
         ) : null}
       </label>
      </div>
-      <button> Login </button>
+      <button data-cy="submit"> Login </button>
      
     <div className="click" onClick={() => history.push("/signup")}>Ragister</div> 
  </div>
