@@ -1,6 +1,6 @@
 import React, { useState ,useEffect} from 'react'
 import './loginauth.css';
-
+import Footer from "../footer/Footer";
 import axios from 'axios'
 import * as yup from "yup";
 import { Route,  useHistory} from "react-router-dom";
@@ -85,7 +85,7 @@ const history = useHistory();
     return (
         <Route> 
     <form className='add-form' onSubmit={formSubmit}>
-    <h4>Welcome Back!</h4>
+    <h3>Welcome Back!</h3>
     <div className='form-control'>
     
     <div className='form-control'>
@@ -120,10 +120,11 @@ const history = useHistory();
      </div>
       <button data-cy="submit"> Login </button>
      
-    <div className="click" onClick={() => history.push("/signup")}>Ragister</div> 
+    <div className="click" onClick={() => history.push("/signup")}>Register</div> 
  </div>
     </form>
     
+    <Footer/>
 </Route>
 
     )

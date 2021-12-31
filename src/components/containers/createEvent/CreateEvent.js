@@ -40,7 +40,7 @@ const CreateEvent = () => {
     setPostData({  potluckName: '', date: '', time: '', location: '', fooditem:'', notes:'' });
       
 }
-const validateChange = e => {
+  const validateChange = e => {
     // Reach will allow us to "reach" into the schema and test only one part.
     yup
       .reach(formSchema, e.target.name)
@@ -60,8 +60,8 @@ const validateChange = e => {
   }
 
 
-    return (
-       <form className="add-form" onSubmit={formSubmit}>
+return (
+    <form className="add-form" onSubmit={formSubmit}>
       <h4>Create your potluck</h4>
       <div className="form-control">
         <div className="form-control">
@@ -151,9 +151,9 @@ const validateChange = e => {
           </label> 
         </div>
         {/* <div className="d-grid gap-2"> */}
-        <Button  data-cy="submit" variant="warning" size="lg">Create</Button>
+        <button  variant="warning" size="lg">Create</button>
         {/* </div> */}
-        <div className="click" onClick={() => history.push('/upcomingevent')}>
+        <div className="click" onClick={() => history.push('/updateEvent')}>
           upcoming event
         </div>
       </div>

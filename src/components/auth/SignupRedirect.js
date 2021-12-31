@@ -1,9 +1,11 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import Footer from "../footer/Footer";
 
 const SignupRedirect = () => {
           const history = useHistory()
     return (
+		<>
         <div className="logindiv">
 			<div className="loginContainer">
 				<div className="redirectConfirm">
@@ -12,6 +14,8 @@ const SignupRedirect = () => {
             </div>
 			</div>
 		</div>
+		<Footer/>
+		</>
     )
 }
 

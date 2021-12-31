@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import * as yup from "yup";
 import { Route,  useHistory} from "react-router-dom";
+import Footer from "../footer/Footer";
 
 const formSchema = yup.object().shape({
   firstName: yup.string().required('First Name is a required.'),
@@ -99,8 +100,9 @@ const SignupAuth = () => {
     setFormState(newFormData)
   }
     return (
+      <>
        <form className="add-form" onSubmit={formSubmit}>
-      <h4>Lets Get Started!</h4>
+      <h3>Lets Get Started!</h3>
       <div className="form-control">
         <div className="form-control">
           <label htmlFor="firstName">
@@ -132,7 +134,6 @@ const SignupAuth = () => {
             ) : null}
           </label>
 
-          {/* <div className='form-control'> */}
           <label htmlFor="email">
             Email
             <input
@@ -170,13 +171,17 @@ const SignupAuth = () => {
           </label>
         </div>
 
-        <button data-cy="submit" disabled={buttonDisabled}>Ragister</button>
+        <button data-cy="submit" disabled={buttonDisabled}>Register</button>
         <div className="click" onClick={() => history.push('/login')}>
           Login
         </div>
       </div>
     </form> 
+     <Footer />
+     </>
     )
+       
+
 }
 
 export default SignupAuth

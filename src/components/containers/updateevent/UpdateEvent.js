@@ -29,6 +29,9 @@ useEffect(effechfn, []);
       {postData.map(post => (
         <EventCard key={post.id} post={post} />
       ))}
+      <br></br>
+         <button onClick={() => history.push("/newevent")}>create new event</button>
+
     </div>
     )
 }

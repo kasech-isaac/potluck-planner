@@ -1,7 +1,7 @@
 import { Route, Redirect } from 'react-router-dom';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  console.log('test');
+  // console.log('test');
     return (
     <Route
       {...rest}
@@ -13,6 +13,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
           return <Redirect to="/login" />
       }
       }}
+      
     />
   )
 

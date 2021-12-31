@@ -44,18 +44,6 @@ useEffect(effechfn, []);
             })         
 }
 
-
-// const deletePotluck=(id)=>{
-//    axiosWithAuth().delete(`https://potluck2020.herokuapp.com/${id}/deletePotluck`)
-//    .then(res=>{
-//      history.push('/newevent')
-//    })
-//    .catch(
-//      err => {
-//        console.log("err", err)
-//      }
-//    )
-// }
 const validateChange = e => {
     // Reach will allow us to "reach" into the schema and test only one part.
     yup

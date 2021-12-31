@@ -1,4 +1,10 @@
-
+h3{
+  color: orange;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  font-family: cursive;
+}
 form {
     display: flex;
     flex-direction: column;
@@ -88,6 +94,7 @@ button:disabled {
   .form-control {
     margin: 20px 0;
   }
+
 
 .form-control input, select {
     outline: none;
