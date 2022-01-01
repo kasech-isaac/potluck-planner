@@ -7,9 +7,9 @@ import Footer from "../footer/Footer";
 const About = () => {
     return (
         <>
-        <h1>Developers</h1>
+       
         <div className="containers aboutus">
-          <div className="card">
+          <div className="cards">
             <img src={kase} alt="person"/>
             <div className="text">
                 <h4>Kasech: Front-end Developer</h4>
@@ -19,7 +19,7 @@ const About = () => {
         <br/>
 
 
-        <div className="card">
+        <div className="cards">
             <img src={nandhini} alt="person"/>
                 <div className="text">
                 <h4>Nandhini: Back-end Developer</h4>

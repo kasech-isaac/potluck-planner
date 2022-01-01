@@ -27,7 +27,8 @@ const deletePotluck=(id)=>{
 
     }
     return (
-    <Card className="text-center">
+      
+    <Card>
   <Card.Header>Your Upcoming Event</Card.Header>
   <Card.Body>
     <Card.Title>{post.potluckName}</Card.Title>
@@ -37,12 +38,12 @@ const deletePotluck=(id)=>{
 <Card.Text>Food: {post.foodItems}</Card.Text>
 <Card.Text>Planner note: {post.notes}</Card.Text>
     <Button variant="primary"onClick={editClass.bind(this, post.potluckId)}>Edit</Button>
-    <strong> or </strong>
+    <strong> -- </strong>
     <Button variant="primary"onClick={deletePotluck.bind(this, post.potluckId)}>Delete</Button>
 
   </Card.Body>
 </Card>
-       
+  
     )
 }
 

@@ -25,12 +25,12 @@ useEffect(effechfn, []);
 
 
     return (
-   <div className="film">
+   <div className="newEvent">
       {postData.map(post => (
         <EventCard key={post.id} post={post} />
       ))}
-      <br></br>
-         <button onClick={() => history.push("/newevent")}>create new event</button>
+      <br/>
+         <button onClick={() => history.push("/newevent")}>create event</button>
 
     </div>
     )
