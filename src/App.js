@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
-import axios from "axios";
 import Home from './components/home/Home'
 import About from './components/about/About'
-import {Button} from 'react-bootstrap';
 import { Link, Switch, Route } from "react-router-dom";
 import SignupAuth from './components/auth/SignupAuth'
 import LoginAuth from './components/auth/LoginAuth'
@@ -26,15 +24,14 @@ function App() {
   return (
 <div className="App">
     
-<Navbar collapseOnSelect expand="lg" bg="light" variant="light" >
-  <Container >
+<Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark" style={{ width: '100%' }}>
+  <Container style={{ positio: 'fixed' }} >
 
         <Navbar.Brand href="/">Potluck Planner</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav
-            className="mr-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
+            className="ms-auto" 
             navbarScroll
           >
           
@@ -53,22 +50,19 @@ function App() {
       <br></br>
             <Switch>
           <Route path="/login" component={LoginAuth}/>
-          {/* <Route path="/about" component={Aboutus} /> */}
           <Route path="/about" component={About}/>
 
          <Route path="/signup" component={SignupAuth}/>
          <Route path="/redirect" component={SignupRedirect}/>
-        {/* <Route path="/contact" component={Contact} />  */}
         <Route exact path="/" component={Home}/>
       </Switch>
 
       <PrivateRoute path='/updateEvent'component={UpdateEvent}/>
       <PrivateRoute path='/dashboard'component={Dashbord}/>
        <PrivateRoute path='/newevent'component={CreateEvent}/>
-      {/* <PrivateRoute path='/updateForm'component={EventCard}/> */}
       <PrivateRoute path='/:id/editPotluck'component={UpdateForm}/>
 
-{/* editPotluck */}
+
       
 
 
