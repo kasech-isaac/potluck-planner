@@ -2,8 +2,9 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import "./home.css";
 import { useHistory } from "react-router";
-import img7 from "../img/img7.jpeg";
-import img3 from "../img/img3.jpeg";
+import culture from "../img/culture.jpeg";
+import happiness from "../img/happiness.jpeg";
+
 import Footer from "../footer/Footer";
 const Home = () => {
   const history = useHistory();
@@ -55,7 +56,7 @@ const Home = () => {
           </div>
           <div className="right">
            <div className="imgcont">
-           <img className="item-list-image" src="https://images.unsplash.com/photo-1581954548218-415cd6ee5f4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80" alt={'me'} />
+           <img className="item-list-image" src={happiness} alt={'me'} />
            </div>
             </div>
         </div>
@@ -64,7 +65,7 @@ const Home = () => {
        
         <div className="right">
          <div className="imgcont">
-         <img className="item-list-image" src="https://images.unsplash.com/photo-1529832588601-c01e066263a8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt={'me'} />
+         <img className="item-list-image" src={culture} alt={'me'} />
 
          </div>
           </div>
