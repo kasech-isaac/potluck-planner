@@ -8,7 +8,7 @@ h2 {
 
 .homes {
   height: 85vh;
-  background-image: url('../img/share.jpeg');
+  background-image: url('https://images.unsplash.com/photo-1534766438357-2b270dbd1b40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
   /* margin-top: 5%; */
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,7 +16,8 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.7;
+  
+ 
 }
 .homes h2 {
   color: orange;
@@ -26,14 +27,16 @@ span {
   color: white;
 }
 .titles {
-  background: gray;
+  font-weight: bold;
   padding: 5px;
   width: 70%;
   margin: 0 auto;
+  color: white;
+  /* opacity: 0.3; */
 }
 .titles p {
   font-size: 17px;
-  color: black;
+  color: white;
   font-size: 18px;
 }
 .homebuttons {
@@ -67,7 +70,7 @@ span {
 }
 .text {
   width: 70%;
-  border: 3px solid orange;
+  border: 6px solid orange;
   background-color: #fff;
   text-align: center;
   padding: 4%;
@@ -100,6 +103,7 @@ span {
   justify-content: center;
   align-items: center;
   padding: 4% 0;
+ 
 }
 @media (max-width: 500px) {
   .potluckSome .text {

@@ -25,7 +25,7 @@ function App() {
 <div className="App">
     
 <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark" style={{ width: '100%' }}>
-  <Container style={{ positio: 'fixed' }} >
+  <Container style={{ positio: 'fixed'}} >
 
         <Navbar.Brand href="/">Potluck Planner</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

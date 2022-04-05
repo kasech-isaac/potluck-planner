@@ -43,9 +43,9 @@ const Home = () => {
 </div>
         </div>
         <br/>
-        <div className="heroImg">
+        {/* <div className="heroImg">
 
-        </div>
+        </div> */}
        
         <div className="boxes">
         
@@ -71,7 +71,7 @@ const Home = () => {
           </div>
            
         <div className="left">
-        <p><span>Learn diffrent Culture</span><br/>A potluck is a great way to learn about other people Culture. <br/><button className="button_slide slide_right"
+        <p><span>Diffrent Culture</span><br/>A potluck is a great way to learn about other people Culture. <br/><button className="button_slide slide_right"
               onClick={() => history.push("/signup")}>Sign Up</button></p>
         
         </div>
