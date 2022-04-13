@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './App.css';
 import Home from './components/home/Home'
 import About from './components/about/About'
@@ -27,12 +27,13 @@ function App() {
 <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark" style={{ width: '100%' }}>
   <Container style={{ positio: 'fixed'}} >
 
-        <Navbar.Brand href="/">Potluck Planner</Navbar.Brand>
+        <Navbar.Brand href="/" style={{ fontSize: '1.5rem', color:'orange' }}>Potluck Planner</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav
             className="ms-auto" 
             navbarScroll
+            style={{ fontSize: '1rem' }}
           >
           
             <Link to="/" className="nav-link" aria-current="page">Home</Link>
